@@ -1,0 +1,11 @@
+# Utiliser l'image officielle de MongoDB
+FROM mongo:latest
+
+# Définir le répertoire de travail
+WORKDIR /data/db
+
+# Exposer le port par défaut de MongoDB
+EXPOSE 27017
+
+# Commande de démarrage du serveur MongoDB
+CMD ["mongod"]
