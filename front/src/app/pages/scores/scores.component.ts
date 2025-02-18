@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from "../../component/header/header.component";
 
 @Component({
-  selector: 'app-classement',
+  selector: 'app-scores',
   standalone: true,
   imports: [HeaderComponent],
-  templateUrl: './classement.component.html',
-  styleUrl: './classement.component.css'
+  templateUrl: './scores.component.html',
+  styleUrl: './scores.component.css'
 })
-export class ClassementComponent {
+export class ScoresComponent {
 
 }
