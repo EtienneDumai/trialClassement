@@ -9,5 +9,5 @@ import { HeaderComponent } from "../../component/header/header.component";
   styleUrl: './scores.component.css'
 })
 export class ScoresComponent {
-
+  constructor() {}
 }
