@@ -1,11 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Tour } from '../../models/tour.model';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TourService {
-
-  constructor() { }
+  private tour: Tour[] = [];
+  constructor() {}
   getTour() {
-    return  ;}
+    return this.tour;
+  }
+  setTour(tour: Tour[]) {
+    this.tour = tour;
+  }
+  
 }
