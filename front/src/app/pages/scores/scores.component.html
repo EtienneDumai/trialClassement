@@ -1,2 +1,34 @@
 <app-header></app-header>
-<p>scores works!</p> 
+<h2>Liste des Classements</h2>
+
+<ul>
+  <li *ngFor="let classement of classements">
+    <button (click)="selectClassement(classement._id)">
+      {{ classement.nom_course }} - {{ classement.date}}
+    </button>
+  </li>
+</ul>
+
+<div *ngIf="selectedClassement">
+  <h3>{{ selectedClassement?.nom_course }}</h3>
+  <p>Lieu : {{ selectedClassement?.lieu }}</p>
+  <p>Date : {{ selectedClassement?.date}}</p>
+
+  <h4>Participants</h4>
+  <ul>
+    <li *ngFor="let pilote of selectedClassement.participants">
+      <strong>{{ pilote.classement }}. {{ pilote.nom }} ({{ pilote.total_points }} points)</strong>
+      <ul>
+        <li *ngFor="let tour of pilote.tours">
+          <strong>Tour {{ tour.numero }} :</strong>
+          0 = {{ tour.compte_points['0'] }},
+          1 = {{ tour.compte_points['1'] }},
+          2 = {{ tour.compte_points['2'] }},
+          3 = {{ tour.compte_points['3'] }},
+          5 = {{ tour.compte_points['5'] }}
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
