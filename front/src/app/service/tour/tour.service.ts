@@ -4,13 +4,13 @@ import { Tour } from '../../models/tour.model';
   providedIn: 'root',
 })
 export class TourService {
-  private tour: Tour[] = [];
+  private tour: Tour = new Tour(0, 0, 0, 0, 0); // Ajout d'une valeur initiale
   constructor() {}
-  getTour() {
+  getTour(): Tour {
     return this.tour;
   }
-  setTour(tour: Tour[]) {
+  setTour(tour: Tour): void {
     this.tour = tour;
   }
-  
 }
+
